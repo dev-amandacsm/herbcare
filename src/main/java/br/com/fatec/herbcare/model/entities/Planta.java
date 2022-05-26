@@ -3,6 +3,7 @@ package br.com.fatec.herbcare.model.entities;
 import lombok.*;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "tb_planta", schema = "db_herbcare_dev")
@@ -30,6 +31,10 @@ public class Planta {
     @ManyToOne //muitas plantas associadas a uma categoria
     @JoinColumn(name = "cd_categoria", nullable = false)
     private Categoria categoria;
+
+    @ManyToMany
+    @JoinTable(name = "tb_planta_sintoma", joinColumns = @JoinColumn(name = "cd_planta"), inverseJoinColumns = @JoinColumn(name = "cd_sintoma"))
+    private List<Sintoma> sintomas;
 
 
 }
