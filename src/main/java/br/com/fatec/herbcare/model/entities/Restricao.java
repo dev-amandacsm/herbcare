@@ -5,20 +5,20 @@ import lombok.*;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "tb_sintoma", schema = "db_herbcare_dev")
+@Table(name = "tb_restricao", schema = "db_herbcare_dev")
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
 @EqualsAndHashCode
 @ToString
-public class Sintoma {
+public class Restricao {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "cd_sintoma", nullable = false)
+    @Column(name = "cd_restricao", nullable = false)
     private Integer id;
 
-    @Column(name = "nm_sintoma", nullable = false, length = 45, unique = true)
+    @Column(name = "nm_grupo", nullable = false, length = 45, unique = true)
     private String nome;
 
 }
