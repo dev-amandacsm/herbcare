@@ -5,27 +5,27 @@ import lombok.*;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "tb_usuario", schema = "db_herbcare_dev")
+@Table(name = "tb_loja", schema = "db_herbcare_dev")
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
 @EqualsAndHashCode
 @ToString
-public class Usuario {
+public class Loja {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "cd_usuario", nullable = false)
+    @Column(name = "cd_loja", nullable = false)
     private Integer id;
 
-    @Column(name = "nm_usuario", nullable = false, length = 45)
+    @Column(name = "nm_loja", nullable = false, length = 45)
     private String nome;
 
-    @Column(name = "ds_login", nullable = false, length = 45, unique = true)
-    private String login;
+    @Column(name = "ds_loja", nullable = false, length = 200, unique = true)
+    private String descricao;
 
-    @Column(name = "ds_senha", nullable = false, length = 45)
-    private String senha;
+    @Column(name = "ds_contato", nullable = false, length = 45)
+    private String contato;
 
     @Column(name = "ds_logradouro", nullable = false, length = 45)
     private String logradouro;
@@ -39,7 +39,7 @@ public class Usuario {
     @Column(name = "cd_cidade", nullable = false)
     private Integer codigoCidade;
 
-    @Column(name = "sg_Estado", nullable = false, length = 2)
-    private String silgaEstado;
+    @Column(name = "sg_estado", nullable = false, length = 2)
+    private String siglaEstado;
 
 }
