@@ -36,5 +36,10 @@ public class Planta {
     @JoinTable(name = "tb_planta_sintoma", joinColumns = @JoinColumn(name = "cd_planta"), inverseJoinColumns = @JoinColumn(name = "cd_sintoma"))
     private List<Sintoma> sintomas;
 
+    @ManyToMany
+    @JoinTable(name = "tb_planta_restricao", joinColumns = @JoinColumn(name = "cd_planta"), inverseJoinColumns = @JoinColumn(name = "cd_sintoma"))
+    private List<Restricao> restricoes;
+
+
 
 }
