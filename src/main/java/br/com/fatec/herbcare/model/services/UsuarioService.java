@@ -30,4 +30,21 @@ public class UsuarioService {
         Usuario entity = findById(id);
         repository.deleteById(entity.getId());
     }
+
+    public void update(Usuario usuario){
+        Usuario entity = findById(usuario.getId());
+        atualizaDados(entity, usuario);
+        repository.save(entity);
+    }
+
+    private void atualizaDados(Usuario entity, Usuario usuario) {
+        entity.setNome(usuario.getNome());
+        entity.setLogin(usuario.getLogin());
+        entity.setSenha(usuario.getSenha());
+        entity.setLogradouro(usuario.getLogradouro());
+        entity.setComplemento(usuario.getComplemento());
+        entity.setCodigoBairro(usuario.getCodigoBairro());
+        entity.setCodigoCidade(usuario.getCodigoCidade());
+        entity.setSiglaEstado(usuario.getSiglaEstado());
+    }
 }
