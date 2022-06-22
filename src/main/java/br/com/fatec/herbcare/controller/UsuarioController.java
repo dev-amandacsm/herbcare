@@ -32,4 +32,10 @@ public class UsuarioController {
     public Usuario save(@RequestBody Usuario entity){
         return service.save(entity);
     }
+
+    @DeleteMapping("/{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void deleteById(@PathVariable Integer id){
+        service.deleteById(id);
+    }
 }

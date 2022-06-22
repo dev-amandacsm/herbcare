@@ -25,4 +25,9 @@ public class UsuarioService {
     public Usuario findById(Integer id){
         return repository.findById(id).orElseThrow(() -> new ObjectNotFoundException("Usuário não encontrado. Verifique o id informado e tente novamente."));
     }
+
+    public void deleteById(Integer id){
+        Usuario entity = findById(id);
+        repository.deleteById(entity.getId());
+    }
 }
