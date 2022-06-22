@@ -32,4 +32,12 @@ public class LojaController {
     public Loja findById(@PathVariable Integer id){
         return service.findById(id);
     }
+
+    @DeleteMapping("/{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void deleteById(@PathVariable Integer id){
+        service.deleteById(id);
+    }
+
 }
+

@@ -16,4 +16,6 @@ public interface LojaRepository extends JpaRepository<Loja, Integer> {
 
     Optional<Loja> findById(Integer id);
 
+    void deleteById(Integer id);
+
 }

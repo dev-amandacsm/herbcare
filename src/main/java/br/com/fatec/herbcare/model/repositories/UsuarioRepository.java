@@ -10,15 +10,11 @@ import java.util.Optional;
 @Repository
 public interface UsuarioRepository extends JpaRepository<Usuario, Integer> {
 
-    @Override
     List<Usuario> findAll();
 
-    @Override
     Usuario save(Usuario entity);
 
-    @Override
     Optional<Usuario> findById(Integer id);
 
-    @Override
     void deleteById(Integer id);
 }
