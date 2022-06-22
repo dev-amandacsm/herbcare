@@ -5,6 +5,8 @@ import br.com.fatec.herbcare.model.repositories.LojaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class LojaService {
 
@@ -13,5 +15,9 @@ public class LojaService {
 
     public Loja save(Loja entity){
         return repository.save(entity);
+    }
+
+    public List<Loja> findAll(){
+        return repository.findAll();
     }
 }

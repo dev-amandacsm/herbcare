@@ -18,10 +18,10 @@ public class Loja {
     @Column(name = "cd_loja", nullable = false)
     private Integer id;
 
-    @Column(name = "nm_loja", nullable = false, length = 45)
+    @Column(name = "nm_loja", nullable = false, length = 45, unique = true)
     private String nome;
 
-    @Column(name = "ds_loja", nullable = false, length = 200, unique = true)
+    @Column(name = "ds_loja", nullable = false, length = 200)
     private String descricao;
 
     @Column(name = "ds_contato", nullable = false, length = 45)
