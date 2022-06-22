@@ -1,7 +1,8 @@
-package br.com.fatec.herbcare.services;
+package br.com.fatec.herbcare.model.services;
 
 import br.com.fatec.herbcare.model.entities.Usuario;
-import br.com.fatec.herbcare.repositories.UsuarioRepository;
+import br.com.fatec.herbcare.model.exceptions.ObjectNotFoundException;
+import br.com.fatec.herbcare.model.repositories.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -19,5 +20,9 @@ public class UsuarioService {
 
     public Usuario save(Usuario entity){
         return repository.save(entity);
+    }
+
+    public Usuario findById(Integer id){
+        return repository.findById(id).orElseThrow(() -> new ObjectNotFoundException("Usuário não encontrado. Verifique o id informado e tente novamente."));
     }
 }
