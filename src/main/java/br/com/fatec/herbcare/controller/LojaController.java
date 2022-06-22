@@ -26,4 +26,10 @@ public class LojaController {
     public List<Loja> findAll(){
         return service.findAll();
     }
+
+    @GetMapping("/{id}")
+    @ResponseStatus(HttpStatus.OK)
+    public Loja findById(@PathVariable Integer id){
+        return service.findById(id);
+    }
 }
