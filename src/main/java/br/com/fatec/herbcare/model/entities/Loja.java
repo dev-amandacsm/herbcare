@@ -9,6 +9,7 @@ import javax.persistence.*;
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
+@Setter
 @EqualsAndHashCode
 @ToString
 public class Loja {

@@ -39,5 +39,12 @@ public class LojaController {
         service.deleteById(id);
     }
 
+    @PutMapping("/{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void update(@PathVariable Integer id, @RequestBody Loja entity){
+        entity.setId(id);
+        service.update(entity);
+    }
+
 }
 
