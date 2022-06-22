@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 public class LojaService {
 
     @Autowired
-    LojaRepository repository;
+    private LojaRepository repository;
 
     public Loja save(Loja entity){
         return repository.save(entity);
