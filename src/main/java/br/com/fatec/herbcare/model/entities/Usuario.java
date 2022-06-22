@@ -40,6 +40,6 @@ public class Usuario {
     private Integer codigoCidade;
 
     @Column(name = "sg_Estado", nullable = false, length = 2)
-    private String silgaEstado;
+    private String siglaEstado;
 
 }
